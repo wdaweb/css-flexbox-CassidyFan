@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <style>
+        .main {
+            /* background: pink; */
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .textcontanier {
+            display: flex;
+            /* justify-content: center; */
+            /* flex-direction: column; */
+            /* background: lightgreen; */
+            /* align-content: space-between; */
+            justify-content: space-around;
+            height: 552px;
+            width: 687px;
+            align-items: center;
+        }
+
+        .big-container {
+            width: 100%;
+            /* background: lightgray; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .sidetext {
+            color: #333;
+            font-family: "標楷體";
+            font-size: 27px;
+            font-weight: bolder;
+            writing-mode: vertical-lr;
+            /* background: lightcoral; */
+        }
+
+        .middle-container {
+            border: 1px solid #333;
+            /* background: lightseagreen; */
+            width: 513px;
+            height: 550px;
+            display: flex;
+            justify-content: center;
+            /* align-content: space-between; */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 416px;
+            height: 468px;
+            margin: auto;
+            /* background: lightblue; */
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+        }
+
+        .white {
+            border: 0.5px solid #333;
+        }
+
+        .black {
+            border: 0.5px solid #333;
+        }
+
+        .white-5 {
+            border-style: none;
+        }
+
+        .black-5 {
+            border-style: none;
+        }
+
+        .line {
+            position: relative;
+            margin: auto;
+            /* border: 1px solid #333; */
+            /* background-color: #333; */
+            line-height: 120px;
+            text-indent: 5px;
+        }
+
+        .line::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 102px;
+            border-bottom: 1px solid #000;
+            transform-origin: bottom center;
+            transform: rotateZ(45deg) scale(1.414);
+        }
+
+        .line2 {
+            position: relative;
+            margin: auto;
+            /* border: 1px solid #333; */
+            /* background-color: #333; */
+            line-height: 120px;
+            text-indent: 5px;
+        }
+
+        .line2::before {
+            content: "";
+            position: absolute;
+            left: -51px;
+            top: 50px;
+            width: 102px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #000;
+            transform-origin: bottom center;
+            transform: rotateZ(-45deg) scale(1.414);
+        }
+
+        .line3 {
+            position: relative;
+            margin: auto;
+            /* border: 1px solid #333; */
+            /* background-color: #333; */
+            line-height: 120px;
+            text-indent: 5px;
+        }
+
+        .line3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -1px;
+            width: 102px;
+            border-bottom: 1px solid #000;
+            transform-origin: bottom center;
+            transform: rotateZ(45deg) scale(1.414);
+        }
+
+        .line4 {
+            position: relative;
+            margin: auto;
+            /* border: 1px solid #333; */
+            /* background-color: #333; */
+            line-height: 120px;
+            text-indent: 5px;
+        }
+
+        .line4::before {
+            content: "";
+            position: absolute;
+            left: -51px;
+            top: -2px;
+            width: 102px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #000;
+            transform-origin: bottom center;
+            transform: rotateZ(-45deg) scale(1.414);
+        }
+
+        .text5 {
+            font-family: "標楷體";
+            font-weight: 600;
+            font-size: 30px;
+        }
+
+        /* .text {
+            display: flex;
+            justify-content: flex-end;
+        } */
+
+        .chuhan {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .hejie {
+            display: flex;
+            align-items: center;
+        }
+
+        .aaa {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            /* position: absolute; */
+            z-index: 2;
+            text-align: center;
+            line-height: 42px;
+            font-family: "標楷體";
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
+        .chess {
+            width: 460px;
+            height: 517px;
+            /* background: rgb(179, 226, 208); */
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 228px;
+            justify-content: space-between;
+        }
+
+        .chessinside {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .zubing {
+            width: 458px;
+            height: 210px;
+            /* background: #bf9ec4; */
+            display: flex;
+            position: absolute;
+            top: 153px;
+            left: 2px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .zubing2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .paobao {
+            width: 355px;
+            height: 304px;
+            /* background: #dbdd6d; */
+            display: flex;
+            position: absolute;
+            top: 103px;
+            left: 54px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .paobao2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="big-container">
+            <div class="textcontanier">
+                <div class="sidetext">
+                    <p>棋盤裡，車無輪，馬無疆，叫聲將軍堤防堤防</p>
+                </div>
+                <div class="middle-container">
+
+                    <div class="chess">
+                        <div class="chessinside">
+                            <div class="che aaa">車</div>
+                            <div class="horse aaa">馬</div>
+                            <div class="siang aaa">象</div>
+                            <div class="shi aaa">士</div>
+                            <div class="jiang aaa">將</div>
+                            <div class="shi aaa">士</div>
+                            <div class="siang aaa">象</div>
+                            <div class="horse aaa">馬</div>
+                            <div class="che aaa">車</div>
+                        </div>
+                        <div class="chessinside">
+                            <div class="che aaa red">俥</div>
+                            <div class="horse aaa red">傌</div>
+                            <div class="siang aaa red">相</div>
+                            <div class="shi aaa red">仕</div>
+                            <div class="jiang aaa red">帥</div>
+                            <div class="shi aaa red">仕</div>
+                            <div class="siang aaa red">相</div>
+                            <div class="horse aaa red">傌</div>
+                            <div class="che aaa red">俥</div>
+                        </div>
+
+                        <div class="zubing">
+                            <div class="zubing2">
+                                <div class="zu aaa">卒</div>
+                                <div class="zu aaa">卒</div>
+                                <div class="zu aaa">卒</div>
+                                <div class="zu aaa">卒</div>
+                                <div class="zu aaa">卒</div>
+                            </div>
+                            <div class="zubing2">
+                                <div class="bing aaa red">兵</div>
+                                <div class="bing aaa red">兵</div>
+                                <div class="bing aaa red">兵</div>
+                                <div class="bing aaa red">兵</div>
+                                <div class="bing aaa red">兵</div>
+                            </div>
+                        </div>
+
+                        <div class="paobao">
+                            <div class="paobao2">
+                                <div class="bao aaa">包</div>
+                                <div class="bao aaa">包</div>
+                            </div>
+                            <div class="paobao2">
+                                <div class="pao aaa red">炮</div>
+                                <div class="pao aaa red">炮</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black line"></div>
+                            <div class="square white line2"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                        </div>
+                        <div class="row text">
+                            <div class="square white-5"></div>
+                            <div class="square black-5 text5 chuhan">楚</div>
+                            <div class="square white-5 text5 hejie">河</div>
+                            <div class="square black-5"></div>
+                            <div class="square white-5"></div>
+                            <div class="square black-5 text5 chuhan">漢</div>
+                            <div class="square white-5 text5 hejie">界</div>
+                            <div class="square black-5"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                        </div>
+                        <div class="row">
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black line3"></div>
+                            <div class="square white line4"></div>
+                            <div class="square black"></div>
+                            <div class="square white"></div>
+                            <div class="square black"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidetext">
+                    <p>圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

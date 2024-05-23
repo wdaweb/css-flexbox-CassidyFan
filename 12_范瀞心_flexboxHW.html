@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* 滿版黑色背景 */
+    #navbar {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* 固定容器 */
+    .container {
+      width: 65%;
+      margin: auto;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #main {
+      /* background: #333; */
+      padding: 65px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .menu-bar {
+      margin: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .col {
+      width: 50%;
+    }
+
+
+    img {
+      width: 484px;
+      height: 215px;
+      border-radius: 7px;
+    }
+
+    button {
+      background-color: #3293d3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .text-white-zone {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .text-body {
+      background: #7a7a7a;
+      height: 80px;
+      border-radius: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .card-row {
+      /* background: lightblue; */
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .card-100 {
+      display: flex;
+      flex-direction: column;
+      width: 370px;
+      height: 244px;
+      border: 1px solid #d1cece;
+      border-radius: 8px;
+    }
+
+    .card-body {
+      padding: 13px;
+      padding-top: 0px;
+    }
+
+    .card-footer-1 {
+      display: flex;
+      align-items: center;
+      width: 368px;
+      height: 48px;
+      background: #e7e7e7;
+      border: 0.5px solid #d1cece;
+      border-radius: 4px;
+      margin-top: 15px;
+      /* background: pink; */
+    }
+
+    .card-footer-2 {
+      display: flex;
+      align-items: center;
+      width: 368px;
+      height: 48px;
+      background: #e7e7e7;
+      border: 0.5px solid #d1cece;
+      border-radius: 4px;
+      margin-top: -5px;
+    }
+
+    .card-footer-3 {
+      display: flex;
+      align-items: center;
+      width: 368px;
+      height: 48px;
+      background: #e7e7e7;
+      border: 0.5px solid #d1cece;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+
+    .More-btn {
+      width: 90px;
+      margin-left: 17px;
+    }
+
+    #big-footer {
+      display: flex;
+      background: #000;
+      color: #fff;
+      height: 120px;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar">
+    <div class="container">
+      <!-- 內容=> flexbox -->
+      <div class="content">
+        <!-- logo flex-item -->
+        <div class="logo">
+          <h2>Start Bootstrap</h2>
+        </div>
+        <!-- 選單 flex-item -->
+        <nav>
+          <a class="menu-bar" href="#">Home</a>
+          <a class="menu-bar" href="#">About</a>
+          <a class="menu-bar" href="#">Contact</a>
+          <a class="menu-bar" href="#">Services</a>
+        </nav>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg">
+        </div>
+        <div class="col">
+          <div class="business-name">
+            <h1 class="title">Business Name or Tagline</h1>
+            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it
+              makes a great use of the standard Bootstrap core components. Feel free to use this template for any
+              project you want!</p>
+            <a href="#"><button>Call to Action!</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-white-zone">
+        <div class="text-body">
+          <p>This call to action card is a great place to showcase some important information or display a clever
+            tagline!</p>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="col-md4">
+          <div class="card-100">
+            <div class="card-body">
+              <h2>Card One</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam
+                molestias corporis quod, ea minima accusamus.</p>
+            </div>
+            <div class="card-footer-1">
+              <button class="More-btn">More Info</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md4">
+          <div class="card-100">
+            <div class="card-body">
+              <h2>Card Two</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim!
+                Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+            </div>
+            <div class="card-footer-2">
+              <button class="More-btn">More Info</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md4">
+          <div class="card-100">
+            <div class="card-body">
+              <h2>Card Three</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam
+                molestias corporis quod, ea minima accusamus.</p>
+            </div>
+            <div class="card-footer-3">
+              <button class="More-btn">More Info</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="big-footer">
+    <p>Copyright © Your Website 2023</p>
+  </div>
+</body>
+
+</html>
